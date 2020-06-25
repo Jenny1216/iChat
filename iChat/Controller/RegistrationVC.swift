@@ -8,30 +8,33 @@
 
 import UIKit
 import ProgressHUD
+import Firebase
 
 class RegistrationVC: UIViewController {
-
     
     @IBOutlet weak var fullNameForReg: UITextField!
     @IBOutlet weak var emailForReg: UITextField!
     @IBOutlet weak var passwordForReg: UITextField!
     @IBOutlet weak var confirmPasswordForReg: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-  
+        
     }
-    
-    
     
     @IBAction func registerButtonPressed(_ sender: Any) {
         
         if fullNameForReg.text != "" && emailForReg.text != "" && passwordForReg.text != "" &&  confirmPasswordForReg.text != "" {
             
-            registerUser()
-            
+            if passwordForReg.text == confirmPasswordForReg.text {
+                
+                registerUser()
+                
+            } else {
+                ProgressHUD.showError("Password not Valid!")
+                passwordForReg.text = ""
+                confirmPasswordForReg.text = ""
+            }
         } else {
             ProgressHUD.showError("All fields are required!")
         }
@@ -39,16 +42,15 @@ class RegistrationVC: UIViewController {
     
     func registerUser() {
         
+        Auth.auth().createUser(withEmail: emailForReg.text!, password: passwordForReg.text!) { (user, error) in
+            
+            if error != nil {
+                print(error!)
+            } else {
+                ProgressHUD.show("Registration Successful!")
+                self.performSegue(withIdentifier: "regToProfileVC", sender: self)
+                ProgressHUD.dismiss()
+            }
+        }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

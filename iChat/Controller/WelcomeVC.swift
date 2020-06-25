@@ -6,9 +6,13 @@
 //  Copyright © 2018 Jinisha Savani. All rights reserved.
 //
 
-import UIKit
-import TextFieldEffects
+
+import Firebase
+import FirebaseAuth
 import ProgressHUD
+import TextFieldEffects
+import UIKit
+
 
 class WelcomeVC: UIViewController, UITextFieldDelegate {
     
@@ -21,40 +25,23 @@ class WelcomeVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        logInEmailTxtField.delegate = self
-        //        logInPasswrdTxtField.delegate = self
-        //
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     }
     
     //IBActions
     @IBAction func logInButtonPressed(_ sender: Any) {
         
         dismissKeyboard()
-        print("entered")
         
         if logInEmailTxtField.text != "" && logInPasswrdTxtField.text != "" {
-            print("successsful login")
-        self.performSegue(withIdentifier: "toHomeVC", sender: nil)
             loginUser()
-            
         } else {
             ProgressHUD.showError("Inavlid Email or Password!")
         }
-        
     }
     
     @IBAction func registerButtonPressed(_ sender: Any) {
         dismissKeyboard()
-//        self.performSegue(withIdentifier: "toRegistrationVC", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-//        if segue.identifier == "toHomeVC" {
-//            let destinationVC = segue.destination as! HomeVC
-//        } else if segue.identifier == "toRegistrationVC" {
-//            let destinationVC = segue.destination as! RegistrationVC
-//        }
     }
     
     func dismissKeyboard(){
@@ -66,12 +53,23 @@ class WelcomeVC: UIViewController, UITextFieldDelegate {
     func clearTextField(){
         logInEmailTxtField.text = ""
         logInPasswrdTxtField.text = ""
-        
     }
     
     func loginUser() {
         
+        Auth.auth().signIn(withEmail: logInEmailTxtField.text!, password: logInPasswrdTxtField.text!) { (user, error) in
+            
+            if error != nil {
+                print(error!)
+                ProgressHUD.showError("Invalid Email or Password !")
+            } else {
+                ProgressHUD.show()
+                self.performSegue(withIdentifier: "welcometoHomeVC", sender: nil)
+                self.clearTextField()
+                ProgressHUD.dismiss()
+                
+                //           TO-DO: Fetch User Id and store in user defaults
+            }
+        }
     }
-    
-    
 }

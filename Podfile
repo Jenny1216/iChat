@@ -1,34 +1,24 @@
-platform :ios, '9.0'
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.0'
 
 target 'iChat' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'TextFieldEffects'
-pod 'Firebase/Database'
-pod 'Firebase/Core'
 pod 'Firebase/Auth'
-pod 'Firebase/Storage'
-pod 'Firebase/Firestore'
-
+pod 'Firebase/Database'
 pod 'ProgressHUD'
-pod 'MBProgressHUD'
-pod 'IQAudioRecorderController'
-
-pod 'JSQMessagesViewController', '7.3.3'
-pod 'IDMPhotoBrowser'
-#pod 'ImagePicker'
+pod 'TextFieldEffects'
 
   # Pods for iChat
 
-  target 'iChatTests' do
+  #target 'iChatTests' do
     inherit! :search_paths
     # Pods for testing
-  end
+  #end
 
-  target 'iChatUITests' do
-    inherit! :search_paths
+  #target 'iChatUITests' do
     # Pods for testing
-  end
+  #end
 
 end

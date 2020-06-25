@@ -67,7 +67,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="registerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ni-3H-DQi"/>
-                                                    <segue destination="cV8-PW-j7j" kind="show" id="gC6-z3-oDx"/>
+                                                    <segue destination="i2u-UM-B6Q" kind="show" id="u4S-Fe-xSS"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rp8-tj-5r5" customClass="HoshiTextField" customModule="TextFieldEffects">
@@ -164,7 +164,7 @@
                     <connections>
                         <outlet property="logInEmailTxtField" destination="Rp8-tj-5r5" id="BYD-gC-TZs"/>
                         <outlet property="logInPasswrdTxtField" destination="a3h-Xr-WDW" id="Duy-IJ-zZP"/>
-                        <segue destination="LDr-JP-g0o" kind="show" identifier="toHomeVC" id="YvG-rn-VAf"/>
+                        <segue destination="LDr-JP-g0o" kind="show" identifier="welcometoHomeVC" id="YvG-rn-VAf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -172,20 +172,38 @@
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
         <!--RegistrationVC-->
-        <scene sceneID="jJL-Rr-ihc">
+        <scene sceneID="AO5-4O-y1W">
             <objects>
-                <viewController id="cV8-PW-j7j" customClass="RegistrationVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ab5-cH-01y">
+                <viewController id="i2u-UM-B6Q" customClass="RegistrationVC" customModule="iChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mho-xY-7gL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="zpS-is-NYf">
-                                <rect key="frame" x="40" y="94" width="240" height="256"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VGd-26-GkY">
+                                <rect key="frame" x="109" y="420" width="102" height="40"/>
+                                <color key="backgroundColor" red="0.014831821429999999" green="0.27237522600000003" blue="0.4198880196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="102" id="IUc-ZP-eCO"/>
+                                    <constraint firstAttribute="height" constant="40" id="Va4-UX-2lf"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="VwE-72-77y"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="phC-3a-22v"/>
+                                    <constraint firstAttribute="width" constant="102" id="qXR-FC-T7I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerButtonPressed:" destination="i2u-UM-B6Q" eventType="touchUpInside" id="4Vu-QX-HwC"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="Twe-dY-7Xg">
+                                <rect key="frame" x="40" y="114" width="240" height="256"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ajg-t6-ntZ" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ohm-LN-IFM" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="EYI-hD-TPv"/>
+                                            <constraint firstAttribute="height" constant="40" id="pdd-LO-Sfd"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -205,10 +223,10 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gk5-pH-LaM" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rap-Bc-DEd" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="72" width="240" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="pZQ-lQ-jKs"/>
+                                            <constraint firstAttribute="height" constant="40" id="bQN-YS-fkK"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -228,11 +246,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qle-f1-4hN" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ijE-Hd-o5N" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="144" width="240" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="7mJ-qF-1hw"/>
-                                            <constraint firstAttribute="height" constant="40" id="tyb-DU-3Hx"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="B6W-Kp-3xh"/>
+                                            <constraint firstAttribute="height" constant="40" id="QN1-3s-aLi"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -252,11 +270,11 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7NG-9F-Hnm" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dLY-jF-dgt" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="0.0" y="216" width="240" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="HWL-qG-AcQ"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="aMO-Df-pp2"/>
+                                            <constraint firstAttribute="height" constant="40" id="D41-yu-Avr"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="shS-x9-2QO"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -278,46 +296,61 @@
                                     </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="256" id="3Hc-od-GMb"/>
-                                    <constraint firstAttribute="width" constant="240" id="tzn-Bw-ape"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="256" id="7iG-O4-crJ"/>
+                                    <constraint firstAttribute="width" constant="240" id="9XE-Kz-9uW"/>
+                                    <constraint firstAttribute="height" constant="256" id="hWE-Dw-ltV"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRS-N4-uzF">
-                                <rect key="frame" x="109" y="395" width="102" height="40"/>
-                                <color key="backgroundColor" red="0.014831821429999999" green="0.27237522600000003" blue="0.4198880196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="102" id="Chp-gN-en7"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="DGv-CU-mJX"/>
-                                    <constraint firstAttribute="height" constant="40" id="ebB-cz-kfh"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="102" id="rU8-cV-nZG"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="23"/>
-                                <state key="normal" title="Register">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zpS-is-NYf" firstAttribute="top" secondItem="SWB-24-4Nh" secondAttribute="top" constant="30" id="3b7-lJ-hgx"/>
-                            <constraint firstItem="IRS-N4-uzF" firstAttribute="top" secondItem="zpS-is-NYf" secondAttribute="bottom" constant="45" id="coL-BD-gNd"/>
-                            <constraint firstItem="zpS-is-NYf" firstAttribute="centerX" secondItem="Ab5-cH-01y" secondAttribute="centerX" id="rT4-9l-Jhj"/>
-                            <constraint firstItem="IRS-N4-uzF" firstAttribute="centerX" secondItem="Ab5-cH-01y" secondAttribute="centerX" id="vgI-zm-Ryj"/>
+                            <constraint firstItem="Twe-dY-7Xg" firstAttribute="leading" secondItem="2By-vd-ZZQ" secondAttribute="leading" constant="40" id="Dtp-xm-zNc"/>
+                            <constraint firstItem="Twe-dY-7Xg" firstAttribute="top" secondItem="2By-vd-ZZQ" secondAttribute="top" constant="50" id="PZy-XU-hV0"/>
+                            <constraint firstItem="Twe-dY-7Xg" firstAttribute="centerX" secondItem="Mho-xY-7gL" secondAttribute="centerX" id="Zmb-Yy-EvI"/>
+                            <constraint firstItem="2By-vd-ZZQ" firstAttribute="trailing" secondItem="Twe-dY-7Xg" secondAttribute="trailing" constant="40" id="eVM-6V-sGl"/>
+                            <constraint firstItem="VGd-26-GkY" firstAttribute="top" secondItem="Twe-dY-7Xg" secondAttribute="bottom" constant="50" id="lAs-Or-zZX"/>
+                            <constraint firstItem="VGd-26-GkY" firstAttribute="centerX" secondItem="Mho-xY-7gL" secondAttribute="centerX" id="sEj-Iw-qpp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="SWB-24-4Nh"/>
+                        <viewLayoutGuide key="safeArea" id="2By-vd-ZZQ"/>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="LDr-JP-g0o" kind="show" id="nft-sH-LF8"/>
+                        <outlet property="confirmPasswordForReg" destination="dLY-jF-dgt" id="kig-2B-vVl"/>
+                        <outlet property="emailForReg" destination="Rap-Bc-DEd" id="WDQ-mz-3Wx"/>
+                        <outlet property="fullNameForReg" destination="ohm-LN-IFM" id="iW1-gQ-Sms"/>
+                        <outlet property="passwordForReg" destination="ijE-Hd-o5N" id="1EM-bC-qmh"/>
+                        <segue destination="hbC-wx-uG1" kind="show" identifier="regToProfileVC" id="qiK-ID-1WI"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fib-oJ-vZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12t-GI-4za" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2001" y="-138"/>
+            <point key="canvasLocation" x="2312" y="-38"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="1U5-tr-T6t">
+            <objects>
+                <viewController title="Profile" id="hbC-wx-uG1" customClass="ProfileVC" customModule="iChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3yU-Gb-3Wx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MwP-61-qBS"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Profile" id="6TQ-M5-64z">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="3Wm-fH-gyq"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ES-gv-ATH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3081" y="-38"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="yK7-aS-g2W">
             <objects>
-                <viewController id="LDr-JP-g0o" customClass="HomeVC" sceneMemberID="viewController">
+                <viewController id="LDr-JP-g0o" customClass="HomeVC" customModule="iChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1xh-S1-hGB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,6 +370,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oyJ-MV-jgD">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.014831821429999999" green="0.27237522600000003" blue="0.4198880196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.89441114664077759" green="0.91727012395858765" blue="0.94118058681488037" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="26"/>
+                            <color key="textColor" red="0.014831821429999999" green="0.27237522600000003" blue="0.4198880196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -351,7 +390,4 @@
     <resources>
         <image name="iconImage" width="188" height="269"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="YvG-rn-VAf"/>
-    </inferredMetricsTieBreakers>
 </document>
